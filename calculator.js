@@ -3,15 +3,19 @@ var calculator = {
 
     val: 0,
     getsum: function (x, y) {
+        if(!(this.isNumeric(x) && this.isNumeric(y))) return console.log("Введіть числа");
             return this.val =x + y;
         },
     getdif: function (x, y) {
+        if(!(this.isNumeric(x) && this.isNumeric(y))) return console.log("Введіть числа");
             return this.val = x - y;
     },
     getmul: function (x, y) {
+        if(!(this.isNumeric(x) && this.isNumeric(y))) return console.log("Введіть числа");
             return this.val = x * y;
     },
     getdiv: function (x, y) {
+        if(!(this.isNumeric(x) && this.isNumeric(y))) return console.log("Введіть числа");
             return this.val = x / y;
     },
 
