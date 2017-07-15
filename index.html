@@ -7,35 +7,66 @@
 </head>
 <body bgcolor="#C0C0C0" text="black">
 <script src="calculator.js"></script>
+<script>
+    var buffer;
+    var memory = [];
+
+    var setsymbol = function(num){
+       var display = document.getElementById("display");
+        display.value += num;
+        buffer = display.value;
+    };
+    var deletescreen = function(){
+       var display = document.getElementById("display");
+        display.value = "";
+    };
+
+    var globalcalc = function(str){
+        memory.push(buffer);
+        buffer = "";
+        switch(str){
+            case '-':
+                memory.push('-');
+                break;
+        }
+        console.table(memory);
+    }
+
+    var resultfunc = function(){
+        var str = display.value;
+        display.value = parsestr(str);
+    }
+
+</script>
     <form name="calculator">
     <table >
         <caption>my first calculator JS</caption>
         <tr>
-            <td colspan="4"><input type="text" name="input" size="20" class="display" ></td>
+            <td colspan="4"><input type="text" name="input" size="20" class="display" id="display" readonly></td>
         </tr>
         <tr>
-            <td><input type="button" value="1"></td>
-            <td><input type="button" value="2"></td>
-            <td><input type="button" value="3"></td>
-            <td><input type="button" value="-"></td>
+            <td><input type="button" value="1" onclick="setsymbol('1')"></td>
+            <td><input type="button" value="2" onclick="setsymbol('2')"></td>
+            <td><input type="button" value="3" onclick="setsymbol('3')"></td>
+            <td><input type="button" value="-" onclick="setsymbol('-')"></td>
         </tr>
         <tr>
-            <td><input type="button" value="4"></td>
-            <td><input type="button" value="5"></td>
-            <td><input type="button" value="6"></td>
-            <td><input type="button" value="+"></td>
+            <td><input type="button" value="4" onclick="setsymbol('4')"></td>
+            <td><input type="button" value="5" onclick="setsymbol('5')"></td>
+            <td><input type="button" value="6" onclick="setsymbol('6')"></td>
+            <td><input type="button" value="+" onclick="setsymbol('+')"></td>
         </tr>
         <tr>
-            <td><input type="button" value="7"></td>
-            <td><input type="button" value="8"></td>
-            <td><input type="button" value="9"></td>
-            <td><input type="button" value="*"></td>
+            <td><input type="button" value="7" onclick="setsymbol('7')"></td>
+            <td><input type="button" value="8" onclick="setsymbol('8')"></td>
+            <td><input type="button" value="9" onclick="setsymbol('9')"></td>
+            <td><input type="button" value="*" onclick="setsymbol('*')"></td>
         </tr>
         <tr>
-            <td><input type="button" value="c"></td>
-            <td><input type="button" value="0"></td>
-            <td><input type="button" value="="></td>
-            <td><input type="button" value="*"></td>
+            <td><input type="button" value="c" onclick="deletescreen()"></td>
+            <td><input type="button" value="0" onclick="setsymbol('0')"></td>
+            <td><input type="button" value="=" onclick="resultfunc()"></td>
+            <td><input type="button" value="/" onclick="setsymbol('/')"></td>
         </tr>
     </table>
     </form>
