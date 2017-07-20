@@ -3,7 +3,7 @@
     // змінна для запису тимчасових результатів
     val: 0;
     // змінна для виводу помилки
-    myerror : "Ви ввели неправильні аргументи";
+    myError : "Ви ввели неправильні аргументи";
 
     // для перевірки змінної на число використаємо
     // написану раніше функцію isNumeric()
@@ -13,7 +13,7 @@
     // напишемо ф-цію для перевірки двох змінних на число,
     // якщо функція повертає true - значить обидві змінні це число
     function isNumForTwo(x, y){
-        if((isNumeric(x) && isNumeric(x)) && (isNumeric(y) && isNumeric(y))){
+        if(isNumeric(x) && isNumeric(y)){
             return true;
         } else {
             return false;
@@ -92,37 +92,13 @@ var calculator = {
     window.calc = calculator;
 })();
 
-
-// //for(var i = 0; i < str.length; i++){
-// console.log(str.charAt(i));
-// }
-
-// ------------
-/*
-var func = function(){
-    var a = 10;
-    return function () {
-        a++;
-    }
-};
-
-func();
-alert(a);
-
-(function (){
-    var a;
-    function b(){
-        a++;
-    }
-    window.b();
-})*/
-
 function parsestr(str){
     // визначаємо довжину рядка
     var lenght = str.length;
     // ітератор
     var i = 0;
     // змінна для першого аргументу
+
     var first = "";
     // змінна для другого елементу
     var second = "";

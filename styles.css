@@ -1,0 +1,45 @@
+*{box-sizing: content-box}
+
+.calc {
+    /* обращение к классу */
+    background: #d5d5d5;
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+}
+.display {
+    padding: 10px 50px;
+    font-size: 18px;
+    flex: 1 1 100%;
+    margin: 1px;
+    width: 100%;
+}
+
+.btn-groups{
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.calc-row{
+    flex: 1 1 100%; /*прочитать про flex*/
+    display: flex;
+}
+
+.btn{
+    background: #eee;
+    flex: 1 1;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    text-align: center;
+    transition: 0.4s;
+    user-select: none;
+    coursor: pointer;
+}
+
+.btn:hover{
+    background: #d1d1d1;
+}
+
+#display{
+    /*обращение по id*/
+}
