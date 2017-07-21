@@ -1,12 +1,13 @@
 (function () {
 
+    var val;
     var container = document.getElementById('calculator');
     var btns = document.getElementById('calculatorBtns');
     var display = document.getElementsByClassName('display')[0];
     // container.onclick = calcClick;
-    btns.onclick = btnClick;
-    //display.onkeydown = dislpayCheck;
+    //btns.onclick = btnClick;
 
+    //display.onkeydown = dislpayCheck;
     function btnClick(event){
         var element = event.target;
         var first = element.dataset.val;
@@ -15,20 +16,14 @@
             return;
         } else if(first === '='){
             var str = display.value;
-            display.value = ps.parseString(str);
+            display.value = parseString(str);
             console.log(display.value);
             return;
         }
         display.value += element.dataset.val;
-        console.log(event.target.dataset);
+        // console.log(event.target.dataset);
+    };
 
-    }
-
-})();
-
-(function () {
-
-    var val;
 
     function parseString(str){
         var lenght = str.length;
@@ -46,7 +41,6 @@
                 i++;
             } else {
                 operator = str[i];
-                debugger;
                 if(isNumeric(str[i+1])){
                     i++;
                     while(isNumeric(str[i])){
@@ -61,7 +55,7 @@
         return first;
     };
 
-    function isNumeric(){
+    function isNumeric(x){
         return !isNaN(parseFloat(x)) && isFinite(x);
     };
 
@@ -70,6 +64,26 @@
             return true;
         } else {
             return false;
+        }
+    };
+
+    function getfunc(x, y, a){
+        var val = 0;
+        switch (a){
+            case '+': val = calculator.getsum(x,y);
+                return val;
+                break;
+            case "-": val = x - y;
+                return val;
+                break;
+            case "*": val = x * y;
+                return val;
+                break;
+            case "/": val = x / y;
+                return val;
+                break;
+            default: myerror;
+                break;
         }
     };
 
@@ -120,6 +134,8 @@
             return !isNaN(parseFloat(x)) && isFinite(x);
         }
     };
+
+
 
     window.calc = calculator;
 

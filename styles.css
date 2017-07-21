@@ -1,10 +1,20 @@
 *{box-sizing: content-box}
 
+#body {
+    background: linear-gradient(rgba(248, 73, 70, 0.51), rgba(148, 36, 120, 0.51));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .calc {
     /* обращение к классу */
-    background: #d5d5d5;
+    background: linear-gradient(rgba(248, 73, 70, 0.51), rgba(148, 36, 120, 0.51));
     display: flex;
     flex-wrap: wrap;
+
+
     width: 300px;
 }
 .display {
@@ -21,14 +31,14 @@
     flex-wrap: wrap;
 }
 .calc-row{
-    flex: 1 1 100%; /*прочитать про flex*/
+    flex: 1 1 100%;
     display: flex;
 }
 
 .btn{
-    background: #eee;
+    background: linear-gradient(rgba(248, 73, 70, 0.51), rgba(148, 36, 120, 0.51));
     flex: 1 1;
-    border: 1px solid #ffffff;
+    border: 1px solid #aaaaff;
     padding: 10px;
     text-align: center;
     transition: 0.4s;
@@ -37,7 +47,7 @@
 }
 
 .btn:hover{
-    background: #d1d1d1;
+    background: #9b84d1;
 }
 
 #display{
